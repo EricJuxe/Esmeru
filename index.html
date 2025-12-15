@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Feliz Cumpleaños</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <h1>🎉 Feliz Cumpleaños 🎉</h1>
+            <div class="instructions">
+                <p>1. Permite el uso de cámara y micrófono.</p>
+                <p>2. Usa tu dedo ☝️ para encender las velas.</p>
+                <p>3. ¡Sopla 🌬️ al micrófono para pedir un deseo!</p>
+            </div>
+            <button id="startButton" disabled>Cargando...</button>
+        </div>
+    </div>
+
+    <video id="webcam" autoplay playsinline muted></video>
+
+    <div class="scene-container">
+        <div id="matchstick" class="matchstick hidden">
+            <div class="match-wood"></div>
+            <div class="match-head"></div>
+            <div class="match-flame"></div>
+        </div>
+
+        <div class="cake-structure">
+            <div class="plate"></div>
+            <div class="layer layer-bottom"></div>
+            <div class="layer layer-middle"></div>
+            <div class="layer layer-top"></div>
+            <div class="icing"></div>
+            
+            <div class="candles-wrapper">
+                <div class="candle" id="candle1">
+                    <div class="wick"></div>
+                    <div class="flame hidden"></div>
+                </div>
+                <div class="candle" id="candle2">
+                    <div class="wick"></div>
+                    <div class="flame hidden"></div>
+                </div>
+                <div class="candle" id="candle3">
+                    <div class="wick"></div>
+                    <div class="flame hidden"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="celebration-message" class="hidden">
+            ¡FELIZ CUMPLEAÑOS! <br> 💖
+        </div>
+    </div>
+    
+    <div id="debug-status">Cargando sistema...</div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
